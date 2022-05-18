@@ -70,7 +70,7 @@ export default function Statbox({ type }: any) {
 
     return (
         <>
-            <div className="bg-white md:w-full xs:w-[45%] w-full justify-between shadow
+            <div className="bg-white sm:w-[45%] w-full justify-between shadow
                 rounded p-4 m-2 border flex border-transparent">
                 <section className='flex flex-col justify-evenly'>
                     <div className='text-lg text-gray-700'>{data.title}</div>

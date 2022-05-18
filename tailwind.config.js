@@ -9,6 +9,8 @@ module.exports = {
     screens: {
       'xs': '500px',
       ...defaultTheme.screens,
+
+
     },
   },
   plugins: [],
