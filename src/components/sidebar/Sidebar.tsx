@@ -5,8 +5,9 @@ import SidebarItem from './SidebarItem';
 export default function Sidebar({ isOpen }: any) {
     return (
         <>
-            <main className={`${`w-[280px] bg-[#111827] fixed xl:relative z-50 flex-col min-h-screen overflow-y-auto xl:flex`}
-             ${isOpen ? "flex fixed" : "hidden"}`}>
+            <main className={`${`w-[280px] bg-[#111827] xl:opacity-100 xl:visible xl:translate-x-0 fixed xl:relative z-50 flex-col min-h-screen overflow-y-auto xl:flex 
+             transition-all ease-in-out duration-300`}
+             ${isOpen ? "flex fixed visible opacity-100" : "invisible opacity-0 -translate-x-20"}`}>
                 <div className='border-b border-gray-500 flex items-center h-[100px] '>
                     <img src="/images/icons/main-logo.png" className='cursor-pointer ml-4' alt="logo" width="80px" />
                     <span className='text-xl font-bold leading-7 cursor-pointer text-white'>Chekit</span>

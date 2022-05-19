@@ -6,7 +6,7 @@ import Statbox from "../components/Statbox"
 import { MenuIcon } from "@heroicons/react/solid";
 
 function Home() {
-  let [isOpen, setIsOpen] = useState(false)
+  let [isOpen, setIsOpen] = useState(true)
 
   const openModal = () => {
     console.log(isOpen)
@@ -18,9 +18,9 @@ function Home() {
     <div className="flex w-full">
       <Sidebar isOpen={isOpen} />
       <MenuIcon
-        onClick={openModal} className={`${`w-6 xl:hidden block cursor-pointer absolute top-6 left-6`}
-        ${isOpen ? "hidden" : "block"}`} />
-      <div className="w-full relative"
+        onClick={openModal} className={`${`w-6 xl:hidden transition-all ease-in-out duration-300 block cursor-pointer absolute top-6 left-6`}
+        ${isOpen ? "invisible opacity-0" : "visible opacity-100"}`} />
+      <div className="w-full "
         onClick={() => setIsOpen(false)}>
         <Navigation isOpen={isOpen} />
         <main className="p-3">
@@ -31,7 +31,8 @@ function Home() {
             <Statbox type="balance" />
           </div>
         </main>
-        <div className={`${`w-full fixed h-full top-0 left-0 bottom-0 opacity-50`} ${isOpen ? "bg-black" : null}`}></div>
+        <div className={`${`w-full xl:bg-transparent fixed h-full top-0 left-0 bottom-0 pointer-events-none opacity-50`} 
+        ${isOpen ? "bg-black" : "bg-transparent"}`}></div>
       </div>
     </div>
   );

@@ -14,6 +14,8 @@ export default function Navigation({ isOpen }: any) {
   return (
     <nav>
       <div className="flex items-center justify-between border px-6 py-2">
+
+
         <section>
           <div className={`${`ml-8 xl:ml-0 flex items-center justify-center w-full`} ${isOpen ? "ml-0" : "ml-8"}`}>
             <div className="flex border-2 rounded">
