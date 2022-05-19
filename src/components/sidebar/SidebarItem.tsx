@@ -1,10 +1,10 @@
 import React from 'react'
 import { ChartBarIcon, UsersIcon, ShoppingBagIcon, CogIcon, ChartSquareBarIcon, UserIcon } from "@heroicons/react/solid";
+import { ISidebarItem } from '../../interfaces/interface';
 
 
 export default function SidebarItem({ type }: any) {
-
-    let data
+    let data: ISidebarItem
 
     if (type === "dashboard") {
         data = {

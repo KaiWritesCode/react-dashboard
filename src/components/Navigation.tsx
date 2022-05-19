@@ -8,18 +8,14 @@ import {
   MenuIcon
 } from "@heroicons/react/outline";
 
-export default function Navigation({ isOpen, openModal }: any) {
+export default function Navigation({ isOpen }: any) {
 
 
   return (
     <nav>
       <div className="flex items-center justify-between border px-6 py-2">
-        <MenuIcon
-          onClick={openModal} className={`${`w-6 xl:hidden block cursor-pointer absolute
-          `} ${isOpen ? "hidden" : "block"}`} />
-
         <section>
-          <div className="ml-8 xl:ml-0 flex items-center justify-center w-full">
+          <div className={`${`ml-8 xl:ml-0 flex items-center justify-center w-full`} ${isOpen ? "ml-0" : "ml-8"}`}>
             <div className="flex border-2 rounded">
               <input
                 type="text"
