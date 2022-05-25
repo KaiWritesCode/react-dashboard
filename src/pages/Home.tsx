@@ -4,6 +4,7 @@ import Navigation from "../components/Navigation";
 import Sidebar from "../components/sidebar/Sidebar";
 import Statbox from "../components/Statbox"
 import { MenuIcon } from "@heroicons/react/solid";
+import Revenue from "../components/Revenue";
 
 function Home() {
   let [isOpen, setIsOpen] = useState(true)
@@ -27,6 +28,9 @@ function Home() {
             <Statbox type="order" />
             <Statbox type="earning" />
             <Statbox type="balance" />
+          </div>
+          <div>
+            <Revenue />
           </div>
         </main>
         <div className={`${`w-full xl:bg-transparent fixed h-full top-0 left-0 bottom-0 pointer-events-none opacity-50`} 
