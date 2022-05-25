@@ -9,8 +9,6 @@ function Home() {
   let [isOpen, setIsOpen] = useState(true)
 
   const openModal = () => {
-    console.log(isOpen)
-
     setIsOpen(true)
   }
 

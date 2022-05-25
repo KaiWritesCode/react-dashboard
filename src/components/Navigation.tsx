@@ -8,9 +8,11 @@ import {
   MenuIcon
 } from "@heroicons/react/outline";
 
-export default function Navigation({ isOpen }: any) {
+interface Iprops {
+  isOpen: boolean
+}
 
-
+const Navigation = ({ isOpen }: Iprops) => {
   return (
     <nav>
       <div className="flex items-center justify-between border px-6 py-2">
@@ -78,3 +80,5 @@ export default function Navigation({ isOpen }: any) {
     </nav>
   );
 }
+
+export default Navigation

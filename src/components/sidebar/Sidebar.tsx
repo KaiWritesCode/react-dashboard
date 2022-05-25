@@ -2,7 +2,11 @@ import React from 'react'
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import SidebarItem from './SidebarItem';
 
-export default function Sidebar({ isOpen }: any) {
+interface Iprops {
+    isOpen: boolean
+}
+
+export default function Sidebar({ isOpen }: Iprops) {
     return (
         <>
             <main className={`${`w-[280px] bg-[#111827] xl:opacity-100 xl:visible xl:translate-x-0 fixed xl:relative z-50 flex-col min-h-screen overflow-y-auto xl:flex 

@@ -2,8 +2,11 @@ import React from 'react'
 import { ChartBarIcon, UsersIcon, ShoppingBagIcon, CogIcon, ChartSquareBarIcon, UserIcon } from "@heroicons/react/solid";
 import { ISidebarItem } from '../../interfaces/interface';
 
+interface IProps {
+    type: string;
+}
 
-export default function SidebarItem({ type }: any) {
+export default function SidebarItem({ type }: IProps) {
     let data: ISidebarItem
 
     if (type === "dashboard") {
