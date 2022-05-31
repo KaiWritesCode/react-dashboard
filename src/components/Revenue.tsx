@@ -52,7 +52,6 @@ export default function Revenue() {
                             return (
                                 <div className='flex justify-center flex-col text-center'>
                                     <div className='text-gray-600 mb-1'>{name}</div>
-
                                     <div className={`${isPositive ? "text-green-600" : "text-red-600"} ${`flex text-center`}`}>
                                         {isPositive ? <ArrowSmUpIcon className='text-green-500 w-6' /> :
                                             <ArrowSmDownIcon className='text-red-500 w-6' />}
@@ -61,16 +60,6 @@ export default function Revenue() {
                             )
                         })}
                     </div>
-
-
-                    {/* <div className='flex justify-center flex-col'>
-                            <div>Last Week</div>
-                            <div className={`${isPositive ? "text-green-600" : "text-red-600"}`}>$12.5k</div>
-                        </div>
-                        <div className='flex justify-center flex-col'>
-                            <div>Last Month</div>
-                            <div className={`${isPositive ? "text-green-600" : "text-red-600"}`}>$12.5k</div>
-                        </div> */}
 
                 </main>
             </div>

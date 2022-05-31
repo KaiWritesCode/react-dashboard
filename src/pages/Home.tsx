@@ -4,6 +4,7 @@ import Navigation from "../components/Navigation";
 import Sidebar from "../components/sidebar/Sidebar";
 import Statbox from "../components/Statbox"
 import { MenuIcon } from "@heroicons/react/solid";
+import Chart from "../components/Chart"
 import Revenue from "../components/Revenue";
 
 function Home() {
@@ -29,8 +30,9 @@ function Home() {
             <Statbox type="earning" />
             <Statbox type="balance" />
           </div>
-          <div>
+          <div className="flex-col mt-3 h-full gap-5 flex lg:flex-row">
             <Revenue />
+            <Chart />
           </div>
         </main>
         <div className={`${`w-full xl:bg-transparent fixed h-full top-0 left-0 bottom-0 pointer-events-none opacity-50`} 
