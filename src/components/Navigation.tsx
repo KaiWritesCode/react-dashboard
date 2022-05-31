@@ -50,17 +50,17 @@ const Navigation = ({ isOpen }: Iprops) => {
             <GlobeAltIcon width="25" className="mr-1" />
             English
           </div>
-          <div className="ml-5 text-gray-700 hidden sm:block cursor-pointer">
-            <MoonIcon width="25" />
-          </div>
+
+          <MoonIcon className="ml-5 text-gray-700 hidden sm:block cursor-pointer" width="25" />
+
           <div className="ml-4 text-gray-700 relative  cursor-pointer">
             <BellIcon width="25" />
-            <div className="w-4 h-4 bg-red-600 text-white rounded-full flex justify-center
-             items-center text-sm absolute -top-2 -right-1 weight">1</div>
+            <div className="w-2 h-2 bg-blue-500 text-white rounded-full flex justify-center
+             items-center text-sm absolute -top-0.5 right-0.5 weight"></div>
           </div>
           <div className="ml-4 text-gray-700 relative cursor-pointer hidden sm:block">
-            <div className="w-4 h-4 bg-red-600 text-white rounded-full flex justify-center items-center
-             text-sm absolute -top-2 -right-1 ">2</div>
+            {/* <div className="w-3 h-3 bg-blue-700 text-white rounded-full flex justify-center
+             items-center text-sm absolute -top-1 -right-1 weight"></div> */}
             <ChatAltIcon width="25" />
           </div>
           <div className="ml-4 text-gray-700 cursor-pointer hidden sm:block">
