@@ -6,6 +6,7 @@ import Statbox from "../components/Statbox"
 import { MenuIcon } from "@heroicons/react/solid";
 import Chart from "../components/Chart"
 import Revenue from "../components/Revenue";
+import Orders from "../components/Orders";
 
 function Home() {
   let [isOpen, setIsOpen] = useState(true)
@@ -30,9 +31,12 @@ function Home() {
             <Statbox type="earning" />
             <Statbox type="balance" />
           </div>
-          <div className="flex-col mt-3 h-full gap-5 flex lg:flex-row">
+          <div className="flex-col md:items-stretch items-center mt-3 mx-1 h-full gap-5 flex md:flex-row">
             <Revenue />
             <Chart />
+          </div>
+          <div className="flex-col md:items-stretch items-center mt-3 mx-1 h-full gap-5 flex md:flex-row">
+            <Orders />
           </div>
         </main>
         <div className={`${`w-full xl:bg-transparent fixed h-full top-0 left-0 bottom-0 pointer-events-none opacity-50`} 
