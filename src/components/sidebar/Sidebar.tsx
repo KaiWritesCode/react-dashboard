@@ -13,8 +13,10 @@ export default function Sidebar({ isOpen }: Iprops) {
              transition-all ease-in-out duration-300`}
              ${isOpen ? "flex fixed visible opacity-100" : "invisible opacity-0 -translate-x-20"}`}>
                 <div className='border-b border-gray-500 flex items-center h-[100px] '>
-                    <img src="/images/icons/main-logo.png" className='cursor-pointer ml-4' alt="logo" width="80px" />
-                    <span className='text-xl font-bold leading-7 cursor-pointer text-white'>Chekit</span>
+                    <div className='flex items-center'>
+                        <img src="/images/icons/am-logo.png" className='cursor-pointer ml-4' alt="logo" width="40px" />
+                        <span className='text-2xl font-bold leading-7 ml-3 translate-y-1 cursor-pointer text-white'>AmDash</span>
+                    </div>
                 </div>
 
                 <div className='py-4 flex flex-col grow'>
