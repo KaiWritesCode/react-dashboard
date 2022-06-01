@@ -17,12 +17,12 @@ function Home() {
   }
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full overflow-hidden">
       <Sidebar isOpen={isOpen} />
       <MenuIcon
         onClick={openModal} className={`${`w-6 xl:hidden transition-all ease-in-out duration-300 block cursor-pointer absolute top-6 left-6`}
         ${isOpen ? "invisible opacity-0" : "visible opacity-100"}`} />
-      <div className="w-full "
+      <div className="w-full overflow-scroll ml-0 xl:ml-[280px]"
         onClick={() => setIsOpen(false)}>
         <Navigation isOpen={isOpen} />
         <main className="p-3">
@@ -37,8 +37,8 @@ function Home() {
             <Chart />
           </div>
           <div className="flex-col md:items-stretch items-center mt-5 mx-1 h-full gap-5 flex md:flex-row">
-            <div className="w-[65%] flex">  <Orders /></div>
-            <div className="w-[35%] flex">    <Products /></div>
+            <div className="md:w-[65%] w-full flex">  <Orders /></div>
+            <div className="md:w-[35%] w-full flex">    <Products /></div>
 
 
           </div>

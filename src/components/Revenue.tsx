@@ -31,8 +31,8 @@ export default function Revenue() {
 
     return (
         <>
-            <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md ">
-                <main className="flex flex-col justify-end p-6 items-center">
+            <div className="md:max-w-sm max-w-none bg-white rounded-lg border border-gray-200 shadow-md w-full">
+                <main className="flex flex-col justify-end p-6 items-center ">
                     <div className='flex justify-between w-full'>
                         <div className='text-gray-500'>Total Revenue</div>
                         <div id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 hover:bg-gray-100 rounded-lg text-sm p-1.5 cursor-pointer" >

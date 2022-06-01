@@ -9,7 +9,7 @@ interface Iprops {
 export default function Sidebar({ isOpen }: Iprops) {
     return (
         <>
-            <main className={`${`w-[280px] bg-[#111827] xl:opacity-100 xl:visible xl:translate-x-0 fixed xl:relative z-50 flex-col min-h-screen overflow-y-auto xl:flex 
+            <main className={`${`w-[280px] bg-[#111827] xl:opacity-100 xl:visible xl:translate-x-0 fixed  min-h-screen z-50 flex-col h-full overflow-y-hidden xl:flex 
              transition-all ease-in-out duration-300`}
              ${isOpen ? "flex fixed visible opacity-100" : "invisible opacity-0 -translate-x-20"}`}>
                 <div className='border-b border-gray-500 flex items-center h-[100px] '>

@@ -22,10 +22,10 @@ export default function Orders() {
             <section>
                 <div className="bg-gray-100 py-2 w-full">
                     <div className=' items-center flex p-5 h-10'>
-                        <div className='flex-1 '>Order Ref</div>
-                        <div className='flex-1 '>Customer</div>
-                        <div className='flex-1 '>Date</div>
-                        <div className='flex-1 '>Status</div>
+                        <div className='flex-1'>Order Ref</div>
+                        <div className='flex-1'>Customer</div>
+                        <div className='flex-1'>Date</div>
+                        <div className='flex-1 hidden lg:block'>Status</div>
                     </div>
                 </div>
                 <div>
@@ -36,7 +36,7 @@ export default function Orders() {
                                     <div className="flex-1">{item.orderRef}</div>
                                     <div className="flex-1">{item.customer}</div>
                                     <div className="flex-1">{item.date}</div>
-                                    <div className="flex-1">
+                                    <div className="flex-1 hidden lg:block">
                                         <div className={`${item.color} ${"inline-block font-semibold uppercase text-white p-0.5 px-2 rounded-xl"}`}> {item.status}</div>
                                     </div>
                                 </div>
