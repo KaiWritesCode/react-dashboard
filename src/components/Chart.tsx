@@ -1,5 +1,5 @@
 import React from 'react'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import "../App.css"
 
 export default function Chart() {
@@ -18,9 +18,9 @@ export default function Chart() {
     <div className=" bg-white rounded-lg border border-gray-200 h-[450px] shadow-md w-full flex-1 p-6">
       <div className="flex items-center justify-between w-full mb-3">
         <div className='text-gray-500 '>Last Week's Revenue</div>
-        <button id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100  focus:ring-gray-200  rounded-lg text-sm p-1.5" type="button">
+        <div id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 hover:bg-gray-100 rounded-lg text-sm p-1.5 cursor-pointer" >
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
-        </button>
+        </div>
       </div>
       <ResponsiveContainer width="99%" height={380} >
         <AreaChart width={730} height={250} data={data}

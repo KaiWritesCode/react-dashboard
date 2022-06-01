@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   GlobeAltIcon,
   ChatAltIcon,
   BellIcon,
   AdjustmentsIcon,
   MoonIcon,
-  MenuIcon
 } from "@heroicons/react/outline";
 
 interface Iprops {

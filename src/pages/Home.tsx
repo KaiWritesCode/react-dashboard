@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../App.css"
 import Navigation from "../components/Navigation";
 import Sidebar from "../components/sidebar/Sidebar";
@@ -7,6 +7,7 @@ import { MenuIcon } from "@heroicons/react/solid";
 import Chart from "../components/Chart"
 import Revenue from "../components/Revenue";
 import Orders from "../components/Orders";
+import Products from "../components/Products";
 
 function Home() {
   let [isOpen, setIsOpen] = useState(true)
@@ -35,8 +36,11 @@ function Home() {
             <Revenue />
             <Chart />
           </div>
-          <div className="flex-col md:items-stretch items-center mt-3 mx-1 h-full gap-5 flex md:flex-row">
-            <Orders />
+          <div className="flex-col md:items-stretch items-center mt-5 mx-1 h-full gap-5 flex md:flex-row">
+            <div className="w-[65%] flex">  <Orders /></div>
+            <div className="w-[35%] flex">    <Products /></div>
+
+
           </div>
         </main>
         <div className={`${`w-full xl:bg-transparent fixed h-full top-0 left-0 bottom-0 pointer-events-none opacity-50`} 
