@@ -14,7 +14,7 @@ export default function Products() {
         <div className="bg-white rounded-lg border border-gray-200 shadow-md flex-1 py-6">
             <main className="flex flex-col justify-end px-6 ">
                 <div className='flex justify-between w-full'>
-                    <div className='text-gray-500 mb-6'>Total Revenue</div>
+                    <div className='text-gray-500 mb-6'>Products</div>
                 </div>
 
                 <section>

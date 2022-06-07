@@ -11,16 +11,36 @@ import Products from "../components/Products";
 
 function Home() {
   let [isOpen, setIsOpen] = useState(true)
+  // const [dotModal, setDotModal] = useState({
+  //   revenue: false,
+  //   products: false,
+  //   chart: false,
+  //   orders: false
+  // })
 
-  const openModal = () => {
-    setIsOpen(true)
-  }
+
+  // const closeDotModal = () => {
+  //   if (dotModal) {
+  //     setDotModal({
+  //       ...dotModal,
+  //       revenue: false
+  //     })
+  //   }
+  // }
+
+  // const openThisModal = (component: string) => {
+  //   setDotModal({
+  //     ...dotModal,
+  //     [component]: true
+  //   })
+
+
 
   return (
-    <div className="flex w-full overflow-hidden">
+    <div className="flex w-full overflow-hidden" >
       <Sidebar isOpen={isOpen} />
       <MenuIcon
-        onClick={openModal} className={`${`w-6 xl:hidden transition-all ease-in-out duration-300 block cursor-pointer absolute top-6 left-6`}
+        onClick={() => setIsOpen(true)} className={`${`w-6 xl:hidden transition-all ease-in-out duration-300 block cursor-pointer absolute top-6 left-6`}
         ${isOpen ? "invisible opacity-0" : "visible opacity-100"}`} />
       <div className="w-full overflow-scroll ml-0 xl:ml-[280px]"
         onClick={() => setIsOpen(false)}>

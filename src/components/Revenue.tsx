@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { CircularProgressbar } from "react-circular-progressbar"
 import 'react-circular-progressbar/dist/styles.css';
-import { ArrowSmUpIcon, ArrowSmDownIcon } from '@heroicons/react/outline'
+import { ArrowSmUpIcon, ArrowSmDownIcon, PencilAltIcon } from '@heroicons/react/outline'
+import { useClickOutside } from '../hooks/ClickOutside'
+
 
 
 export default function Revenue() {
+    const [dotModal, setDotModal] = useState(false)
+
     const total = "$890"
     const percentage = 70
     let text = "70%"
@@ -28,15 +32,26 @@ export default function Revenue() {
         }
     ]
 
+    let domNode = useClickOutside(() => {
+        setDotModal(false)
+    })
+
 
     return (
         <>
-            <div className="md:max-w-sm max-w-none bg-white rounded-lg border border-gray-200 shadow-md w-full">
+            <div className={`md:max-w-sm max-w-none bg-white rounded-lg border border-gray-200 shadow-md w-full`}
+            >
                 <main className="flex flex-col justify-end p-6 items-center ">
-                    <div className='flex justify-between w-full'>
+                    <div className='flex justify-between w-full relative' >
                         <div className='text-gray-500'>Total Revenue</div>
-                        <div id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 hover:bg-gray-100 rounded-lg text-sm p-1.5 cursor-pointer" >
-                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                        <div ref={domNode}>
+                            <div onClick={() => setDotModal(!dotModal)} id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 hover:bg-gray-100 rounded-lg text-sm p-1.5 cursor-pointer" >
+                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                            </div>{
+                                dotModal &&
+                                <ul className=" absolute right-0 translate-x-7 flex-col p-3 bg-black" >
+                                    <li className='text-white flex text-sm align-center'><PencilAltIcon className='mr-3' width={16} />Edit</li>
+                                </ul>}
                         </div>
                     </div>
 
