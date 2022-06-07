@@ -3,7 +3,7 @@ import { CircularProgressbar } from "react-circular-progressbar"
 import 'react-circular-progressbar/dist/styles.css';
 import { ArrowSmUpIcon, ArrowSmDownIcon, PencilAltIcon } from '@heroicons/react/outline'
 import { useClickOutside } from '../hooks/ClickOutside'
-
+import Modal from './Modal';
 
 
 export default function Revenue() {
@@ -32,6 +32,7 @@ export default function Revenue() {
         }
     ]
 
+
     let domNode = useClickOutside(() => {
         setDotModal(false)
     })
@@ -49,9 +50,7 @@ export default function Revenue() {
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
                             </div>{
                                 dotModal &&
-                                <ul className=" absolute right-0 translate-x-7 flex-col p-3 bg-black" >
-                                    <li className='text-white flex text-sm align-center'><PencilAltIcon className='mr-3' width={16} />Edit</li>
-                                </ul>}
+                                <Modal />}
                         </div>
                     </div>
 
