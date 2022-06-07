@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useClickOutside } from '../hooks/ClickOutside'
+import Modal from './Modal';
 
 export default function Orders() {
+    const [dotModal, setDotModal] = useState(false)
 
     const data = [
         { orderRef: "CDD1049", customer: "Ekaterina Tankova", date: "10/04/2019", status: "pending", color: "bg-[#FFB020]" },
@@ -11,12 +14,20 @@ export default function Orders() {
         { orderRef: "CDD1044", customer: "Adam Denisov", date: "1/25/2019", status: "delievered", color: "bg-[#14B8A6]" }
     ]
 
+    let domNode = useClickOutside(() => {
+        setDotModal(false)
+    })
+
     return (
         <div className=" bg-white rounded-lg border border-gray-200 first-letter: shadow-md  flex-1 py-6">
-            <div className="flex items-center justify-between w-full mb-3 px-5">
+            <div className="flex items-center justify-between w-full mb-3 relative px-5">
                 <div className='text-gray-500 '>Latest Orders</div>
-                <div id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 hover:bg-gray-100 rounded-lg text-sm p-1.5 cursor-pointer" >
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                <div ref={domNode}>
+                    <div onClick={() => setDotModal(!dotModal)} id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-500 hover:bg-gray-100 rounded-lg text-sm p-1.5 cursor-pointer" >
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                    </div>{
+                        dotModal &&
+                        <Modal />}
                 </div>
             </div>
             <section>

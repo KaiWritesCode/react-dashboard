@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { CircularProgressbar } from "react-circular-progressbar"
 import 'react-circular-progressbar/dist/styles.css';
 import { ArrowSmUpIcon, ArrowSmDownIcon, PencilAltIcon } from '@heroicons/react/outline'
