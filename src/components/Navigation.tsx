@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   GlobeAltIcon,
   ChatAltIcon,
   BellIcon,
-  AdjustmentsIcon,
   MoonIcon,
 } from "@heroicons/react/outline";
+import { useClickOutside } from '../hooks/ClickOutside'
 
 interface Iprops {
   isOpen: boolean
 }
 
+
+
+
 const Navigation = ({ isOpen }: Iprops) => {
+  const [imageModal, setImageModal] = useState(false)
+
+  let domNode = useClickOutside(() => {
+    setImageModal(false)
+  })
+
   return (
     <nav>
-      <div className="flex items-center  justify-between border px-6 py-2">
+      <main className="flex items-center justify-between border px-6 py-2">
         <section>
           <div className={`${`ml-8 xl:ml-0 items-center justify-center hidden sm:flex`} ${isOpen ? "ml-0" : "ml-8"}`}>
             <div className="flex border-2 rounded">
@@ -61,16 +70,35 @@ const Navigation = ({ isOpen }: Iprops) => {
             <ChatAltIcon width="25" />
           </div>
 
-          <div className="ml-5 text-gray-700 cursor-pointer">
+          <div className="ml-5 text-gray-700 cursor-pointer dropdown-menu " ref={domNode}>
             <img
+              onClick={() => setImageModal(imageModal => !imageModal)}
               src="/images/headshot.jpg"
               className="rounded-full"
-              width="50"
+              width="35"
               alt="headshot"
             />
+            <div className={`origin-top-right absolute right-0 mt-2 w-44 translate-y-3 focus:outline-none ${imageModal ? "absolute" : "hidden"}`}>
+              <div className="relative dropdown shadow-lg bg-white ring-1 divide-y divide-gray-100  ring-black ring-opacity-5 rounded-md" >
+                <div >
+                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Set status</a>
+                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Profile & account</a>
+                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Feedback</a>
+                </div>
+                <div>
+                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Settings</a>
+                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Logout</a>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+
         </section>
-      </div>
+      </main>
+
+
     </nav>
   );
 }
