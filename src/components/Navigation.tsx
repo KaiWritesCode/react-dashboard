@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  GlobeAltIcon, 
+  GlobeAltIcon,
   ChatAltIcon,
   BellIcon,
   AdjustmentsIcon,
@@ -14,15 +14,13 @@ interface Iprops {
 const Navigation = ({ isOpen }: Iprops) => {
   return (
     <nav>
-      <div className="flex items-center justify-between border px-6 py-2">
-
-
+      <div className="flex items-center  justify-between border px-6 py-2">
         <section>
-          <div className={`${`ml-8 xl:ml-0 flex items-center justify-center w-full`} ${isOpen ? "ml-0" : "ml-8"}`}>
+          <div className={`${`ml-8 xl:ml-0 items-center justify-center hidden sm:flex`} ${isOpen ? "ml-0" : "ml-8"}`}>
             <div className="flex border-2 rounded">
               <input
                 type="text"
-                className="px-4 py-1.5 w-24 sm:w-40"
+                className="px-4 py-1.5 w-48 lg:w-full"
                 placeholder="Search..."
               />
               <button className="flex items-center justify-center px-2 border-l">
@@ -50,20 +48,17 @@ const Navigation = ({ isOpen }: Iprops) => {
             English
           </div>
 
-          <MoonIcon className="ml-5 text-gray-700 hidden sm:block cursor-pointer" width="25" />
+          <MoonIcon className="ml-5 text-gray-700 cursor-pointer" width="25" />
 
           <div className="ml-4 text-gray-700 relative  cursor-pointer">
             <BellIcon width="25" />
             <div className="w-2 h-2 bg-blue-500 text-white rounded-full flex justify-center
              items-center text-sm absolute -top-0.5 right-0.5 weight"></div>
           </div>
-          <div className="ml-4 text-gray-700 relative cursor-pointer hidden sm:block">
+          <div className="ml-4 text-gray-700 relative cursor-pointer">
             {/* <div className="w-3 h-3 bg-blue-700 text-white rounded-full flex justify-center
              items-center text-sm absolute -top-1 -right-1 weight"></div> */}
             <ChatAltIcon width="25" />
-          </div>
-          <div className="ml-4 text-gray-700 cursor-pointer hidden sm:block">
-            <AdjustmentsIcon width="25" />
           </div>
 
           <div className="ml-5 text-gray-700 cursor-pointer">
