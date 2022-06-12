@@ -40,7 +40,7 @@ function Home() {
     <div className="flex w-full overflow-hidden" >
       <Sidebar isOpen={isOpen} />
       <MenuIcon
-        onClick={() => setIsOpen(true)} className={`${`w-6 xl:hidden transition-all ease-in-out duration-300 block cursor-pointer absolute top-6 left-6`}
+        onClick={() => setIsOpen(true)} className={`${`w-6 xl:hidden transition-all ease-in-out duration-300 block cursor-pointer absolute top-[1.15rem] left-6`}
         ${isOpen ? "invisible opacity-0" : "visible opacity-100"}`} />
       <div className="w-full overflow-scroll ml-0 xl:ml-[280px]"
         onClick={() => setIsOpen(false)}>
