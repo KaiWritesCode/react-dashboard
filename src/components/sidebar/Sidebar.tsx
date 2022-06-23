@@ -1,12 +1,14 @@
 import React from 'react'
 import { ExternalLinkIcon } from "@heroicons/react/solid";
 import SidebarItem from './SidebarItem';
+import { Link } from 'react-router-dom'
 
 interface Iprops {
     isOpen: boolean
+    setIsOpen: any
 }
 
-export default function Sidebar({ isOpen }: Iprops) {
+export default function Sidebar({ isOpen, setIsOpen }: Iprops) {
     return (
         <>
             <main className={`${`w-[280px] bg-[#111827] xl:opacity-100 xl:visible xl:translate-x-0 fixed  min-h-screen z-50 flex-col h-full overflow-y-hidden xl:flex 
@@ -20,11 +22,12 @@ export default function Sidebar({ isOpen }: Iprops) {
                 </div>
 
                 <div className='py-4 flex flex-col grow'>
-                    <SidebarItem type="dashboard" />
+                    <div onClick={() => setIsOpen(false)}>  <Link to="/" ><SidebarItem type="dashboard" /></Link></div>
                     <SidebarItem type="customers" />
                     <SidebarItem type="products" />
                     <SidebarItem type="logs" />
-                    <SidebarItem type="profile" />
+                    <Link to="/profile"><SidebarItem type="profile" /></Link>
+
                     <SidebarItem type="settings" />
                 </div>
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   GlobeAltIcon,
-  ChatAltIcon,
   BellIcon,
   MoonIcon,
 } from "@heroicons/react/outline";
@@ -36,7 +35,7 @@ const Navigation = ({ isOpen }: Iprops) => {
     <nav>
       <main className="flex items-center justify-between border px-6 py-2">
         <section>
-          <div className={`${`ml-8 xl:ml-0 items-center justify-center hidden sm:flex`} ${isOpen ? "ml-0" : "ml-8"}`}>
+          <div className={`${`ml-12 xl:ml-0 items-center justify-center hidden sm:flex`} ${isOpen ? "ml-0" : "ml-12"}`}>
             <div className="flex border-2 rounded">
               <input
                 type="text"
@@ -81,7 +80,7 @@ const Navigation = ({ isOpen }: Iprops) => {
               <div className="relative noti-dropdown shadow-lg bg-white ring-1 divide-y divide-gray-100 pt-3 ring-black ring-opacity-5 rounded-md" >
                 {notificationData.map((item, idx) => {
                   return (
-                    <a href="#" key={idx} className="text-black block border-b-gray-500 flex items-top text-[0.8rem]  p-4 py-2 hover:bg-gray-50">
+                    <a href="/" key={idx} className="text-black border-b-gray-500 flex items-top text-[0.8rem]  p-4 py-2 hover:bg-gray-50">
                       <div className="mr-4">
                         <img className="w-20 min-w-[3rem] rounded-full " src={item.image} alt="headshot" />
                       </div>
@@ -95,17 +94,13 @@ const Navigation = ({ isOpen }: Iprops) => {
 
 
                 <div>
-                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">View all</a>
+                  <a href="/" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">View all</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="ml-4 text-gray-700 relative cursor-pointer">
-            {/* <div className="w-3 h-3 bg-blue-700 text-white rounded-full flex justify-center
-             items-center text-sm absolute -top-1 -right-1 weight"></div> */}
-            <ChatAltIcon width="25" />
-          </div>
+
 
           <div className="ml-5 text-gray-700 cursor-pointer dropdown-menu " ref={imageDomNode}>
             <img
@@ -118,13 +113,13 @@ const Navigation = ({ isOpen }: Iprops) => {
             <div className={`origin-top-right absolute right-0 mt-2 w-44 translate-y-3 focus:outline-none ${imageModal ? "absolute" : "hidden"}`}>
               <div className="relative dropdown shadow-lg bg-white ring-1 divide-y divide-gray-100  ring-black ring-opacity-5 rounded-md" >
                 <div >
-                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Set status</a>
-                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Profile & account</a>
-                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Feedback</a>
+                  <a href="/" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Set status</a>
+                  <a href="/" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Profile & account</a>
+                  <a href="/" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Feedback</a>
                 </div>
                 <div>
-                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Settings</a>
-                  <a href="#" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Logout</a>
+                  <a href="/" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Settings</a>
+                  <a href="/" className="text-black block px-4 py-2.5 text-sm hover:bg-gray-50">Logout</a>
                 </div>
               </div>
             </div>

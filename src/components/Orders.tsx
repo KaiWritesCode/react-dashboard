@@ -19,7 +19,7 @@ export default function Orders() {
     })
 
     return (
-        <div className=" bg-white rounded-lg border border-gray-200 first-letter: shadow-md  flex-1 py-6">
+        <div className=" bg-white rounded-lg border border-gray-200 shadow-md flex-1 py-6">
             <div className="flex items-center justify-between w-full mb-3 relative px-5">
                 <div className='text-gray-500 '>Latest Orders</div>
                 <div ref={domNode}>

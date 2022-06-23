@@ -10,35 +10,12 @@ import Orders from "../components/Orders";
 import Products from "../components/Products";
 
 function Home() {
-  let [isOpen, setIsOpen] = useState(true)
-  // const [dotModal, setDotModal] = useState({
-  //   revenue: false,
-  //   products: false,
-  //   chart: false,
-  //   orders: false
-  // })
-
-
-  // const closeDotModal = () => {
-  //   if (dotModal) {
-  //     setDotModal({
-  //       ...dotModal,
-  //       revenue: false
-  //     })
-  //   }
-  // }
-
-  // const openThisModal = (component: string) => {
-  //   setDotModal({
-  //     ...dotModal,
-  //     [component]: true
-  //   })
-
+  let [isOpen, setIsOpen] = useState(false)
 
 
   return (
     <div className="flex w-full overflow-hidden" >
-      <Sidebar isOpen={isOpen} />
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <MenuIcon
         onClick={() => setIsOpen(true)} className={`${`w-6 xl:hidden transition-all ease-in-out duration-300 block cursor-pointer absolute top-[1.15rem] left-6`}
         ${isOpen ? "invisible opacity-0" : "visible opacity-100"}`} />
@@ -57,10 +34,8 @@ function Home() {
             <Chart />
           </div>
           <div className="flex-col md:items-stretch items-center mt-5 mx-1 h-full gap-5 flex md:flex-row">
-            <div className="md:w-[65%] w-full flex">  <Orders /></div>
-            <div className="md:w-[35%] w-full flex">    <Products /></div>
-
-
+            <div className="md:w-[65%] w-full flex"><Orders /></div>
+            <div className="md:w-[35%] w-full flex"><Products /></div>
           </div>
         </main>
         <div className={`${`w-full xl:bg-transparent fixed h-full top-0 left-0 bottom-0 pointer-events-none opacity-50`} 
