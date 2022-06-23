@@ -13,6 +13,8 @@ function Profile() {
         { label: "Email", type: "email", value: "johndoe@gmail.com", required: false },
         { label: "Password", type: "password", value: "johnjohn123", required: false },
         { label: "Job Title", type: "text", value: "Web Developer", required: false },
+        { label: "Description", type: "text", value: "Frontend Developer at Technext Limited", required: false },
+        { label: "Location", type: "text", value: "Port Orange, Florida", required: false },
     ]
 
     return (
@@ -25,20 +27,21 @@ function Profile() {
                 onClick={() => setIsOpen(false)}>
                 <Navigation isOpen={isOpen} />
 
-                <main className='w-full xl:w-[1100px] mx-auto'>
-                    <section className='flex'>
+                <main className='w-full mx-auto'>
+                    <section className='flex border-b-2 items-center py-3'>
                         <div>
-                            <img className='rounded-full w-32' src="/images/accounts/2.jpg" alt="" />
+                            <img className='rounded-full w-32 mr-5' src="/images/accounts/2.jpg" alt="" />
                         </div>
                         <div>
-                            <div>John Doe</div>
-                            <div><a href="/">johndoe@gmail.com</a> <span>- Administrator</span></div>
+                            <div className='text-3xl'>John Doe</div>
+                            <div>Web Developer at Technext Limited</div>
+                            <div className='text-gray-500'>Port Orange, Florida</div>
                         </div>
                     </section>
                     {inputForms.map((item, index) => {
                         return (
-                            <section key={index} className='flex p-4 flex-col'>
-                                <div className='flex w-full justify-between items-center '>
+                            <section key={index} className='p-4 w-full md:w-[85%] m-auto'>
+                                <div className='flex flex-col md:flex-row w-full justify-between items-start md:items-center '>
                                     <label className="block text-gray-600 mr-auto" htmlFor={item.label}>
                                         {item.label}
                                     </label>
