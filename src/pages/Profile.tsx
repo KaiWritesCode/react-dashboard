@@ -27,7 +27,7 @@ function Profile() {
                 onClick={() => setIsOpen(false)}>
                 <Navigation isOpen={isOpen} />
 
-                <main className='w-full mx-auto'>
+                <main className='xl:w-[1000px] w-full mx-auto border'>
                     <section className='flex border-b-2 items-center py-3'>
                         <div>
                             <img className='rounded-full w-32 mr-5' src="/images/accounts/2.jpg" alt="" />
@@ -40,9 +40,9 @@ function Profile() {
                     </section>
                     {inputForms.map((item, index) => {
                         return (
-                            <section key={index} className='p-4 w-full md:w-[85%] m-auto'>
+                            <section key={index} className='p-4 w-full m-auto'>
                                 <div className='flex flex-col md:flex-row w-full justify-between items-start md:items-center '>
-                                    <label className="block text-gray-600 mr-auto" htmlFor={item.label}>
+                                    <label className="block text-gray-600 " htmlFor={item.label}>
                                         {item.label}
                                     </label>
                                     <input className="appearance-none border-2 border-gray-200 rounded  py-2 px-4
